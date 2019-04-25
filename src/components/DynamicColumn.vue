@@ -1,0 +1,54 @@
+<template>
+	<div>
+		<div class="information" style="background: #fff;">
+			<span>动态栏</span>
+		</div>
+		<router-link to="DynamicContent"><div class="dynamicColumn">
+			<div class="dynamicColumnMain">
+				<h2>00:00</h2>
+				<p>您收到一条学生认证申请</p>
+			</div>
+		</div></router-link>
+		<router-link  to="DynamicContent"><div class="dynamicColumn">
+			<div class="dynamicColumnMain">
+				<h2>2021/10/30  18:30</h2>
+				<p>您提交的认证申请信息已通过，请及时查看！</p>
+			</div>
+		</div></router-link>
+	</div>
+</template>
+
+<script>
+</script>
+
+<style scoped>
+	.dynamicColumn{
+		height: 1.77rem;
+		width: 7.5rem;
+		padding: 0.3rem 0 0 0;
+	}
+	.dynamicColumn .dynamicColumnMain{
+		width: 6.9rem;
+		height: 1.37rem;
+		margin: 0 auto;
+		border: 1px solid #eee;
+		padding: 0.3rem 0 0 0.3rem;
+		border-radius:0.1rem;
+	}
+	.dynamicColumn .dynamicColumnMain h2{
+		height:0.19rem;
+		font-size:0.24rem;
+		font-family:PingFang-SC-Medium;
+		font-weight:500;
+		color:rgba(153,153,153,1);
+	}
+	.dynamicColumn .dynamicColumnMain p{
+		height:0.28rem;
+		font-size:0.30rem;
+		font-family:PingFang-SC-Medium;
+		font-weight:500;
+		color:rgba(51,51,51,1);
+		line-height:0.40rem;
+		margin-top: 0.3rem;
+	}
+</style>

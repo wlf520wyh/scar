@@ -1,0 +1,85 @@
+<template>
+	<div>
+		<div class="information">
+			<span>我的</span>
+		</div>
+		<div class="mine">
+			<h2>币值</h2>
+			<span class="rmbSymbol">&yen; </span><span class="rmb">520</span>
+		</div>
+		<router-link to="MyWallet"><div class="myWallet">
+			<img class="imgLeft" src="../images/e1_ic_wdqb@2x.png" alt="#">
+			<span>我的钱包</span>
+			<img class="imgRight" src="../images/arrow_right_gray@2x.png" alt="#">
+		</div></router-link>
+		<router-link to="Collection"><div class="myWallet">
+			<img class="imgLeft" src="../images/e1_ic_wdqb@2x.png" alt="#">
+			<span>收藏</span>
+			<img class="imgRight" src="../images/arrow_right_gray@2x.png" alt="#">
+		</div></router-link>
+		<div class="myWallet">
+			<img class="imgLeft" src="../images/e1_ic_wdqb@2x.png" alt="#">
+			<span>设置</span>
+			<img class="imgRight" src="../images/arrow_right_gray@2x.png" alt="#">
+		</div>
+	</div>
+</template>
+
+<script>
+</script>
+
+<style>
+	.mine{
+		width: 7.5rem;
+		height: 2.18rem;
+		padding: 0.3rem 0 0 0.3rem;
+		border-bottom: 0.10rem solid #eee;
+	}
+	.mine h2{
+		height:0.26rem;
+		font-size:0.28rem;
+		font-family:PingFang-SC-Medium;
+		font-weight:500;
+		color:rgba(51,51,51,1);
+	}
+	.mine .rmbSymbol{
+		font-size: 0.36rem;
+		color:#999999;
+	}
+	.mine .rmb{
+		font-size:0.72rem;
+		font-family:PingFang-SC-Bold;
+		font-weight:bold;
+		color:#F76262;
+	}
+	.myWallet{
+		width: 7.5rem;
+		height: 1rem;
+		padding: 0.3rem 0.3rem 0 0.3rem;
+		border-bottom: 1px solid #eee;
+	}
+	.myWallet .imgLeft{
+		width: 0.36rem;
+		height: 0.36rem;
+		display: block;
+		float: left;
+	}
+	.myWallet .imgRight{
+		width: 0.26rem;
+		height: 0.26rem;
+		display: block;
+		float: right;
+		margin: 0.1rem 0 0 0;
+	}
+	.myWallet span{
+		width:2rem;
+		height:0.28rem;
+		font-size:0.30rem;
+		font-family:PingFang-SC-Medium;
+		font-weight:500;
+		color:rgba(51,51,51,1);
+		display: block;
+		float: left;
+		margin-left: 0.16rem;
+	}
+</style>

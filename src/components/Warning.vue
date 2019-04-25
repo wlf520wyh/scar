@@ -1,0 +1,55 @@
+<template>
+	<div>
+		<div class="information" style="background: #fff;">
+			<span>警告栏</span>
+		</div>
+		<div class="dynamicColumn">
+			<div class="dynamicColumnMain">
+				<h2>00:00</h2>
+				<p>2015年09月07日，您因D受到警告，此条不良记录已记录到您的档案中，请您规范好自己的行为，杜绝此类现象再次发生。</p>
+			</div>
+		</div>
+		<div class="dynamicColumn">
+			<div class="dynamicColumnMain">
+				<h2>2021/10/30  18:30</h2>
+				<p>2015年09月07日，您因D受到警告，此条不良记录已记录到您的档案中，请您规范好自己的行为，杜绝此类现象再次发生。</p>
+			</div>
+		</div>
+	</div>
+</template>
+
+<script>
+</script>
+
+<style scoped>
+	.dynamicColumn{
+		height: 2.77rem;
+		width: 7.5rem;
+		padding: 0.3rem 0 0 0;
+	}
+	.dynamicColumn .dynamicColumnMain{
+		width: 6.9rem;
+		height: 2.37rem;
+		margin: 0 auto;
+		border: 1px solid #eee;
+		padding: 0.3rem 0 0 0.3rem;
+		border-radius:0.1rem;
+	}
+	.dynamicColumn .dynamicColumnMain h2{
+		height:0.19rem;
+		font-size:0.24rem;
+		font-family:PingFang-SC-Medium;
+		font-weight:500;
+		color:rgba(153,153,153,1);
+	}
+	.dynamicColumn .dynamicColumnMain p{
+		height:0.28rem;
+		font-size:0.30rem;
+		font-family:PingFang-SC-Medium;
+		font-weight:500;
+		color:rgba(51,51,51,1);
+		line-height:0.40rem;
+		margin-top: 0.3rem;
+	}
+</style>
+
