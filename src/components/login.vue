@@ -14,7 +14,7 @@
 				<ul>
 					<li style="width: 1.3rem;">手机号</li>
 					<li>
-						<input type="number" placeholder="请输入手机号码">
+						<input style="height: 0.5rem;border:none;" type="number" placeholder="请输入手机号码">
 					</li>
 				</ul>
 			</div>
@@ -114,6 +114,8 @@ export default {
 	}
 	.loginMain div ul li input{
 		border-bottom: 0.01rem solid #eee;
+		z-index: 999;
+		margin-bottom: 0.05rem;
 	}
 	.loginMain .loginPassword{
 		position: relative;

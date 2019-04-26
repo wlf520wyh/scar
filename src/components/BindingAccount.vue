@@ -1,0 +1,36 @@
+<template>
+	<div>
+		<div class="information">
+			<router-link to="/Login"><a href="#"><img src="../images/general_arrow_left_gray.png" alt=""></a></router-link>
+			<span>账号绑定</span>
+			<router-link to="/TheActivation"><div>完成</div></router-link>
+		</div>
+		<div class="idCard">
+			身份证号码：
+			<input type="text" placeholder="请输入身份证号码"/>
+		</div>
+	</div>
+</template>
+
+<script>
+</script>
+
+<style scoped>
+	.idCard{
+		width: 7.5rem;
+		height: 1rem;
+		font-size: 0.3rem;
+		color: #333333;
+		line-height: 1rem;
+		padding: 0 0 0 0.3rem;
+		border-bottom: 0.01rem solid #eee;
+	}
+	.idCard input{
+		height: 0.8rem;
+		font-size:0.3rem;
+		font-family:PingFang-SC-Medium;
+		font-weight:500;
+		color:rgba(153,153,153,1);
+		margin-left: 0.23rem;
+	}
+</style>

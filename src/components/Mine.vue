@@ -17,11 +17,11 @@
 			<span>收藏</span>
 			<img class="imgRight" src="../images/arrow_right_gray@2x.png" alt="#">
 		</div></router-link>
-		<div class="myWallet">
+		<router-link to="Fit"><div class="myWallet">
 			<img class="imgLeft" src="../images/e1_ic_wdqb@2x.png" alt="#">
 			<span>设置</span>
 			<img class="imgRight" src="../images/arrow_right_gray@2x.png" alt="#">
-		</div>
+		</div></router-link>
 	</div>
 </template>
 

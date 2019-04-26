@@ -37,6 +37,7 @@ import ForgotPassword from './pages/forgotPassword'
 import Encrypted from './pages/encrypted'
 import EmailBack from './pages/emailBack'
 import PhoneBack from './pages/phoneBack'
+import PhoneBackFind from './pages/phoneBackFind'
 import NewPassword from './pages/newPassword'
 import TheMessage from './pages/theMessage'
 import Notice from './pages/notice'
@@ -51,6 +52,15 @@ import PaymentSecurity from './pages/paymentSecurity'
 import SetPassword from './pages/setPassword'
 import Transfer from './pages/transfer'
 import Collection from './pages/collection'
+import Fit from './pages/fit'
+import Help from './pages/help'
+import HelpArticles from './pages/helpArticles'
+import Feedback from './pages/feedback'
+import AboutUs from './pages/aboutUs'
+import VersionInformation from './pages/versionInformation'
+import Authorization from './pages/authorization'
+import BindingAccount from './pages/bindingAccount'
+import TheActivation from './pages/theActivation'
 
 // 引入路由模块
 import VueRouter from 'vue-router'
@@ -79,6 +89,7 @@ const routes = [
 	{ path: '/Encrypted', component: Encrypted},
 	{ path: '/EmailBack', component: EmailBack},
 	{ path: '/PhoneBack', component: PhoneBack},
+	{ path: '/PhoneBackFind', component: PhoneBackFind},
 	{ path: '/NewPassword', component: NewPassword},
 	{ path: '/TheMessage', component: TheMessage},
 	{ path: '/Notice', component: Notice},
@@ -93,7 +104,15 @@ const routes = [
 	{ path: '/SetPassword', component: SetPassword},
 	{ path: '/Transfer', component: Transfer},
 	{ path: '/Collection', component: Collection},
-	
+	{ path: '/Fit', component: Fit},
+	{ path: '/Help', component: Help},
+	{ path: '/HelpArticles', component: HelpArticles},
+	{ path: '/Feedback', component: Feedback},
+	{ path: '/AboutUs', component: AboutUs},
+	{ path: '/VersionInformation', component: VersionInformation},
+	{ path: '/Authorization', component: Authorization},
+	{ path: '/BindingAccount', component: BindingAccount},
+	{ path: '/TheActivation', component: TheActivation}
 ]
 
 //实例路由配置

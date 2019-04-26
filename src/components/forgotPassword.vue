@@ -12,7 +12,7 @@
 			<input type="radio" name="forgot" />
 			通过电子邮箱
 		</div></router-link>
-		<router-link to="PhoneBack"><div class="choose">
+		<router-link to="PhoneBackFind"><div class="choose">
 			<input type="radio" name="forgot" />
 			通过手机号码
 		</div></router-link>
