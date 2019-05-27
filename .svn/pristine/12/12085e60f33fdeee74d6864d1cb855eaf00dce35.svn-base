@@ -1,0 +1,163 @@
+<template>
+	<div>
+		<div class="information">
+			<router-link to='/MyWallet'><a href="#"><img src="../images/general_arrow_left_gray.png" alt=""></a></router-link>
+			<span>转账</span>
+		</div>
+		<div class="newPassword_1">
+			公钥地址
+			<input type="text" placeholder="请输入对方的公钥地址" v-model="publicAddress">
+		</div>
+		<div class="newPassword_1">
+			转账数量
+			<input type="number" v-model="message" placeholder="请输入转账数量">
+		</div>
+		<div class="transfer">
+			<div class="loginBtnBox">
+				<div @click="btnfc()" class="loginButton">确定</div>
+			</div>
+		</div>
+		<div v-show="show" style="width: 7.5rem;height: 50rem;z-index: 888;background: #000;opacity: 0.5;display: none;position: fixed;top: 0;left: 0;"></div>
+		<div v-show="show" class="PopupWindow">
+			<p>确认转账信息</p>
+			<h2>转账金额</h2>
+			<span>&yen; {{ message }}</span>
+			<ul>
+				<li @click="hiddenShow()">取消</li>
+				<li>确定</li>
+			</ul>
+		</div>
+		<div class="PopupWindowTo" v-text="PopupWindowValue" v-show="PopupWindowAppear">
+			
+		</div>
+	</div>
+</template>
+
+<script>
+export default{
+	data(){
+		return{
+			show:false,
+			message:"",
+			publicAddress:'',
+			transferNumber:'',
+			PopupWindowAppear:false,
+			PopupWindowValue:'',
+		}
+	},
+	methods: {
+		btnfc:function () {
+			if(this.publicAddress !== '5KYZdUEo39z3Fyyr2SC1j299sBCnWjss'){
+				this.PopupWindowAppear = true;
+				this.PopupWindowValue = '不存在的密匙';
+				setTimeout(()=>{
+					this.PopupWindowAppear = false;
+				},1500)
+			}else if(this.message == ''){
+				this.PopupWindowAppear = true;
+				this.PopupWindowValue = '请输入转账数量';
+				setTimeout(()=>{
+					this.PopupWindowAppear = false;
+				},1500)
+			}else{
+				this.show =true;
+			}
+			
+		},
+		hiddenShow:function () {
+			this.show = false;
+		},      
+	}
+}
+</script>
+
+<style scoped>
+	.loginBtnBox{
+		width: 7.5rem;
+		height: 1rem;
+	}
+	.loginButton{
+		width: 6.2rem;
+		height: 1rem;
+		background: #00C160;
+		border-radius: 0.1rem;
+		font-size: 0.32rem;
+		text-align: center;
+		line-height: 1rem;
+		margin: 4.52rem auto;
+		color: #fff;
+	}
+	.PopupWindow{
+		width: 5rem;
+		height: 3.8rem;
+		position: fixed;
+		z-index: 999;
+		top: 50%;
+		left: 50%;
+		margin: -1.9rem 0 0 -2.5rem;
+		background: #fff;
+		border-radius:0.10rem;
+	}
+	.PopupWindow p{
+		width: 5rem;
+		height: 0.3rem;
+		text-align: center;
+		font-size:0.3rem;
+		font-family:PingFang-SC-Medium;
+		font-weight:500;
+		color:rgba(51,51,51,1);
+		line-height:0.48rem;
+		margin-top: 0.48rem;
+	}
+	.PopupWindow h2{
+		width: 5rem;
+		height:0.26rem;
+		text-align: center;
+		font-size:0.26rem;
+		font-family:PingFang-SC-Medium;
+		font-weight:500;
+		color:rgba(51,51,51,1);
+		margin-top: 0.48rem;
+	}
+	.PopupWindow span{
+		display: block;
+		width: 5rem;
+		height:0.48rem;
+		font-family:PingFang-SC-Bold;
+		font-weight:bold;
+		color:rgba(51,51,51,1);
+		text-align: center;
+		font-size: 0.48rem;
+		margin-top: 0.23rem;
+	}
+	.PopupWindow ul{
+		margin-top: 0.5rem;
+	}
+	.PopupWindow ul li{
+		height: 1rem;
+		width: 2.5rem;
+		float: left;
+		text-align: center;
+		line-height: 1rem;
+		color: #333;
+		font-size: 0.3rem;
+		border-top:1px solid #eee;
+	}
+	.PopupWindowTo{
+		position: fixed;
+		top: 50%;
+		left: 50%;
+		margin-left: -2.5rem;
+		width:5rem;
+		height:0.9rem;
+		background:rgba(51,51,51,1);
+		opacity:0.7;
+		border-radius:0.1rem;
+		text-align: center;
+		line-height: 0.9rem;
+		font-size:0.3rem;
+		font-family:PingFang-SC-Medium;
+		font-weight:500;
+		color:rgba(255,255,255,1);
+	}
+</style>

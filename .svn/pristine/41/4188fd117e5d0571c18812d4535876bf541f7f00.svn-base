@@ -1,0 +1,57 @@
+<template>
+	<div>
+		<div class="information">
+			<span>币值明细</span>
+		</div>
+		<div class="subsidiary">
+			<h2>信息上链</h2>
+			<p>2017/08/23  12:00:30</p>
+			<div>+<span>1</span></div>
+		</div>
+		<div class="subsidiary">
+			<h2>信息认证</h2>
+			<p>2017/08/23  12:00:30</p>
+			<div>+<span>1</span></div>
+		</div>
+	</div>
+</template>
+
+<script>
+</script>
+
+<style scoped>
+	.subsidiary{
+		width: 7.5rem;
+		height: 1.4rem;
+		border-bottom: 0.01rem solid #eee;
+		padding: 0.29rem 0.33rem 0 0.33rem;
+	}
+	.subsidiary h2{
+		width:1.3rem;
+		height:0.28rem;
+		font-size:0.30rem;
+		font-family:PingFang-SC-Medium;
+		font-weight:500;
+		color:rgba(51,51,51,1);
+		background: #fff;
+	}
+	.subsidiary p{
+		width:2.8rem;
+		height:0.23rem;
+		font-size:0.24rem;
+		font-family:PingFang-SC-Medium;
+		font-weight:500;
+		color:rgba(153,153,153,1);
+		margin: 0.25rem 0 0 0;
+	}
+	.subsidiary div{
+		width:0.28rem;
+		height:0.22rem;
+		font-size:0.30rem;
+		font-family:PingFang-SC-Medium;
+		font-weight:500;
+		color:rgba(0,193,96,1);
+		float: right;
+		margin-top: -0.7rem;
+	}
+</style>

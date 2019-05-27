@@ -1,0 +1,478 @@
+import Home from './pages/pages'
+import Information from './pages/information'
+import InformationDetails from './pages/informationDetails'
+import StudentsManage from './pages/studentsManage'
+import Archives from './pages/archives'
+import PasswordReset from './pages/passwordReset'
+import Attendance from './pages/attendance'
+import Growth from './pages/growth'
+import LackRecord from './pages/lackRecord'
+import StudentLoans from './pages/studentLoans'
+import BadRecord from './pages/badRecord'
+import GoodRecord from './pages/goodRecord'
+import Graduation from './pages/graduation'
+import StudyResult from './pages/studyResult'
+import Login from './pages/login'
+import ForgotPassword from './pages/forgotPassword'
+import Encrypted from './pages/encrypted'
+import EmailBack from './pages/emailBack'
+import PhoneBack from './pages/phoneBack'
+import PhoneBackFind from './pages/phoneBackFind'
+import NewPassword from './pages/newPassword'
+import TheMessage from './pages/theMessage'
+import Notice from './pages/notice'
+import MessageDetails from './pages/messageDetails'
+import DynamicColumn from './pages/dynamicColumn'
+import DynamicContent from './pages/dynamicContent'
+import Warning from './pages/warning'
+import Mine from './pages/mine'
+import MyWallet from './pages/myWallet'
+import Subsidiary from './pages/subsidiary'
+import PaymentSecurity from './pages/paymentSecurity'
+import SetPassword from './pages/setPassword'
+import Transfer from './pages/transfer'
+import Collection from './pages/collection'
+import Fit from './pages/fit'
+import Help from './pages/help'
+import HelpArticles from './pages/helpArticles'
+import Feedback from './pages/feedback'
+import AboutUs from './pages/aboutUs'
+import VersionInformation from './pages/versionInformation'
+import Authorization from './pages/authorization'
+import BindingAccount from './pages/bindingAccount'
+import TheActivation from './pages/theActivation'
+import InformationAuthentication from './pages/informationAuthentication'
+import CertificationRecords from './pages/certificationRecords'
+import ToBeProcessed from './pages/toBeProcessed'
+import ToAcceptThe from './pages/toAcceptThe'
+import AuthenticationSuccess from './pages/authenticationSuccess'
+import HasRefusedTo from './pages/hasRefusedTo'
+import HasBeenCancelled from './pages/hasBeenCancelled'
+import StudentHome from './pages/studentHome'
+import SchoolMaintenance from './pages/schoolMaintenance'
+import SStudentResult from './pages/SstudentResult'
+import StudentGraduated from './pages/StudentGraduated'
+import SStudentLoans from './pages/SStudentLoans'
+import StudentBadRecord from './pages/StudentBadRecord'
+import StudentLackRecord from './pages/StudentLackRecord'
+import StudentGrowth from './pages/StudentGrowth'
+import StudentAttendance from './pages/StudentAttendance'
+import StudentGood from './pages/StudentGood'
+import Management from './pages/Management'
+import TheBasicInformation from './pages/TheBasicInformation'
+import EducationExperience from './pages/EducationExperience'
+import AddTheRecord from './pages/AddTheRecord'
+import SchoolName from './pages/SchoolName'
+import WorkHistory from './pages/WorkHistory'
+import AddWork from './pages/AddWork'
+import ProjectExp from './pages/ProjectExp'
+import AddExp from './pages/AddExp'
+import StudentSearch from './pages/StudentSearch'
+import ActivateTheTwo from './pages/ActivateTheTwo'
+import ActivateTheThree from './pages/ActivateTheThree'
+import keyAddress from './pages/keyAddress'
+import TrainedExperience from './pages/TrainedExperience'
+import AddTrained from './pages/AddTrained'
+import Record from './pages/Record'
+import AddRecord from './pages/AddRecord'
+import PracticeLearning from './pages/PracticeLearning'
+import AddPracticeLearning from './pages/AddPracticeLearning'
+import Certificate from './pages/Certificate'
+import AddCertificate from './pages/AddCertificate'
+import WorkStudyPrograms from './pages/WorkStudyPrograms'
+import AddWorkStudyPrograms from './pages/AddWorkStudyPrograms'
+import PersonalityCharm from './pages/PersonalityCharm'
+import AddPersonalityCharm from './pages/AddPersonalityCharm'
+import Communication from './pages/Communication'
+import AddCommunication from './pages/AddCommunication'
+import Family from './pages/Family'
+import AddFamily from './pages/AddFamily'
+import AddStudy from './components/AddStudy'
+import ToStudents from './components/ToStudents'
+import ToParents from './components/ToParents'
+
+const routers = [
+    { 
+		path: '/', 
+		redirect: '/Login' ,
+	},
+    { 
+		path: '/Home', 
+		component: Home,
+		name: 'Home',
+	},
+    { 
+		path: '/Information', 
+		component: Information,
+	},
+	{ 
+		path: '/Information/informationDetails', 
+		component: InformationDetails,
+	},
+	{ 
+		path: '/StudentsManage', 
+		component: StudentsManage,
+	},
+	{ 
+		path: '/Archives', 
+		component: Archives,
+	},
+	{ 
+		path: '/PasswordReset', 
+		component: PasswordReset,
+	},
+	{ 
+		path: '/Attendance', 
+		component: Attendance,
+	},
+	{ 
+		path: '/Growth', 
+		component: Growth,
+	},
+	{ 
+		path: '/LackRecord', 
+		component: LackRecord,
+	},
+	{ 
+		path: '/StudentLoans',
+		component: StudentLoans,
+	},
+	{ 
+		path: '/BadRecord', 
+		component: BadRecord,
+	},
+	{ 
+		path: '/GoodRecord',
+		component: GoodRecord,
+	},
+	{ 
+		path: '/Graduation', 
+		component: Graduation,
+	},
+	{
+		path: '/StudyResult', 
+		component: StudyResult,
+	},
+	{ 
+		path: '/Login', 
+		component: Login,
+		name: 'Login',
+	},
+	{ 
+		path: '/ForgotPassword', 
+		component: ForgotPassword,
+	},
+	{ 
+		path: '/Encrypted', 
+		component: Encrypted,
+		name: 'Encrypted',
+	},
+	{ 
+		path: '/EmailBack', 
+		component: EmailBack,
+		name: 'EmailBack',
+	},
+	{ 
+		path: '/PhoneBack', 
+		component: PhoneBack,
+	},
+	{ 
+		path: '/PhoneBackFind', 
+		component: PhoneBackFind,
+		name: 'PhoneBackFind',
+	},
+	{ 
+		path: '/NewPassword', 
+		component: NewPassword,
+	},
+	{ 
+		path: '/TheMessage', 
+		component: TheMessage,
+	},
+	{ 
+		path: '/Notice', 
+		component: Notice,
+	},
+	{ 
+		path: '/MessageDetails', 
+		component: MessageDetails,
+	},
+	{ 
+		path: '/DynamicColumn', 
+		component: DynamicColumn,
+	},
+	{ 
+		path: '/DynamicContent', 
+		component: DynamicContent,
+	},
+	{
+		path: '/Warning', 
+		component: Warning,
+	},
+	{ 
+		path: '/Mine', 
+		component: Mine,
+	},
+	{ 
+		path: '/MyWallet', 
+		component: MyWallet,
+	},
+	{ 
+		path: '/Subsidiary', 
+		component: Subsidiary,
+	},
+	{ 
+		path: '/PaymentSecurity', 
+		component: PaymentSecurity,
+	},
+	{ 
+		path: '/SetPassword', 
+		component: SetPassword,
+	},
+	{ 
+		path: '/Transfer', 
+		component: Transfer,
+	},
+	{ 
+		path: '/Collection', 
+		component: Collection,
+	},
+	{ 
+		path: '/Fit', 
+		component: Fit,
+	},
+	{ 
+		path: '/Help', 
+		component: Help,
+	},
+	{ 
+		path: '/HelpArticles', 
+		component: HelpArticles,
+	},
+	{ 
+		path: '/Feedback', 
+		component: Feedback,
+	},
+	{ 
+		path: '/AboutUs', 
+		component: AboutUs,
+	},
+	{ 
+		path: '/VersionInformation', 
+		component: VersionInformation,
+	},
+	{ 
+		path: '/Authorization', 
+		component: Authorization,
+	},
+	{ 
+		path: '/BindingAccount', 
+		component: BindingAccount,
+	},
+	{ 
+		path: '/TheActivation', 
+		component: TheActivation,
+		name: 'TheActivation',
+	},
+	{ 
+		path: '/InformationAuthentication',
+		component: InformationAuthentication,
+	},
+	{ 
+		path: '/CertificationRecords',
+		component: CertificationRecords,
+	},
+	{ 
+		path: '/ToBeProcessed', 
+		component: ToBeProcessed,
+	},
+	{ 
+		path: '/ToAcceptThe', 
+		component: ToAcceptThe,
+	},
+	{ 
+		path: '/AuthenticationSuccess', 
+		component: AuthenticationSuccess,
+	},
+	{ 
+		path: '/HasRefusedTo', 
+		component: HasRefusedTo,
+	},
+	{ 
+		path: '/HasBeenCancelled', 
+		component: HasBeenCancelled,
+	},
+	{ 
+		path: '/StudentHome', 
+		component: StudentHome,
+	},
+	{ 
+		path: '/SchoolMaintenance', 
+		component: SchoolMaintenance,
+	},
+	{ 
+		path: '/SStudentResult',
+		component: SStudentResult,
+	},
+	{ 
+		path: '/StudentGraduated', 
+		component: StudentGraduated,
+	},
+	{ 
+		path: '/SStudentLoans', 
+		component: SStudentLoans,
+	},
+	{ 
+		path: '/StudentBadRecord', 
+		component: StudentBadRecord,
+	},
+	{ 
+		path: '/StudentLackRecord', 
+		component: StudentLackRecord,
+	},
+	{ 
+		path: '/StudentGrowth', 
+		component: StudentGrowth,
+	},
+	{ 
+		path: '/StudentAttendance', 
+		component: StudentAttendance,
+	},
+	{ 
+		path: '/StudentGood', 
+		component: StudentGood,
+	},
+	{ 
+		path: '/Management', 
+		component: Management,
+	},
+	{ 
+		path: '/TheBasicInformation',
+		component: TheBasicInformation,
+	},
+	{ 
+		path: '/EducationExperience', 
+		component: EducationExperience,
+	},
+	{ 
+		path: '/AddTheRecord', 
+		component: AddTheRecord,
+	},
+	{ 
+		path: '/SchoolName', 
+		component: SchoolName,
+	},
+	{
+		path: '/WorkHistory', 
+		component: WorkHistory,
+	},
+	{ 
+		path: '/AddWork', 
+		component: AddWork,
+	},
+	{ 
+		path: '/ProjectExp', 
+		component: ProjectExp,
+	},
+	{ 
+		path: '/AddExp', 
+		component: AddExp,
+	},
+	{ 
+		path: '/StudentSearch', 
+		component: StudentSearch,
+	},
+	{ 
+		path: '/ActivateTheTwo', 
+		component: ActivateTheTwo,
+		name: "ActivateTheTwo"
+	},
+	{ 
+		path: '/ActivateTheThree', 
+		component: ActivateTheThree,
+	},
+	{ 
+		path: '/keyAddress', 
+		component: keyAddress,
+	},
+	{
+		path: '/TrainedExperience',
+		component:TrainedExperience,
+	},
+	{
+		path: '/AddTrained',
+		component:AddTrained,
+	},
+	{
+		path: '/Record',
+		component:Record,
+	},
+	{
+		path: '/AddRecord',
+		component:AddRecord,
+	},
+	{
+		path: '/PracticeLearning',
+		component:PracticeLearning,
+	},
+	{
+		path: '/AddPracticeLearning',
+		component:AddPracticeLearning,
+	},
+	{
+		path: '/Certificate',
+		component:Certificate,
+	},
+	{
+		path: '/AddCertificate',
+		component:AddCertificate,
+	},
+	{
+		path: '/WorkStudyPrograms',
+		component:WorkStudyPrograms,
+	},
+	{
+		path: '/AddWorkStudyPrograms',
+		component:AddWorkStudyPrograms,
+	},
+	{
+		path: '/PersonalityCharm',
+		component:PersonalityCharm,
+	},
+	{
+		path: '/AddPersonalityCharm',
+		component:AddPersonalityCharm,
+	},
+	{
+		path: '/Communication',
+		component:Communication,
+	},
+	{
+		path: '/AddCommunication',
+		component:AddCommunication,
+	},
+	{
+		path: '/Family',
+		component: Family,
+	},
+	{
+		path: '/AddFamily',
+		component: AddFamily,
+	},
+	{
+		path: '/AddStudy',
+		component: AddStudy,
+		name: "AddStudy",
+	},
+	{
+		path: '/ToStudents',
+		component: ToStudents,
+		name: 'ToStudents',
+	},
+	{
+		path: '/ToParents',
+		component: ToParents,
+		name: 'ToParents',
+	}
+]
+export default routers;

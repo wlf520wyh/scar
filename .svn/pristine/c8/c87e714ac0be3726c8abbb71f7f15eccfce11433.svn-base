@@ -1,0 +1,134 @@
+<template>
+	<div>
+		<div class="information">
+			<router-link to="/Login"><a href="#"><img src="../images/general_arrow_left_gray.png" alt=""></a></router-link>
+			<span>激活</span>
+			<router-link to="ActivateTheTwo"><div>下一步</div></router-link>
+		</div>
+		<div class="active">
+			<span class="activeLeft">姓名：</span>
+			<span class="activeRight">鞠婧祎</span>
+		</div>
+		<div class="active">
+			<span class="activeLeft">身份证号：</span>
+			<span class="activeRight">348464313544313</span>
+		</div>
+		<div class="active">
+			<span class="activeLeft">学校：</span>
+			<span class="activeRight">广州大学</span>
+		</div>
+		<div class="active">
+			<span class="activeLeft">学号：</span>
+			<span class="activeRight">30</span>
+		</div>
+		<div class="active">
+			<span class="activeLeft">学院/系：</span>
+			<span class="activeRight">金融系</span>
+		</div>
+		<div class="active">
+			<span class="activeLeft">专业：</span>
+			<span class="activeRight">日语</span>
+		</div>
+		<div class="active">
+			<span class="activeLeft">班级：</span>
+			<span class="activeRight">2019级日语</span>
+		</div>
+		<div class="active">
+			<span class="activeLeft">手机：</span>
+			<input class="phone" type="number" placeholder="填写手机号">
+		</div>
+		<div class="active">
+			<span class="activeLeft">固定电话：</span>
+			<input class="phone" type="number" placeholder="填写固定电话号码">
+		</div>
+		<div class="agreement">
+			
+			<input id="color-input-red" class="chat-button-location-radio-input" type="checkbox" name="color-input-red" value="#00c160" />
+			<label  for="color-input-red"></label >
+			
+			<p>
+				<span>我已阅读并接受</span>《诚信档案公共平台信用服务协议》《大学生建档信息诚信承诺书》《诚信档案-全国社会一体化公共平台对学习信息安全保密承诺书》
+			</p>
+		</div>
+	</div>
+</template>
+
+<script>
+</script>
+
+<style scoped>
+	.phone{
+		height: 0.8rem;
+		margin-left: 0.3rem;
+	}
+	.active{
+		width: 7.5rem;
+		height: 1rem;
+		font-size: 0.3rem;
+		color: #333;
+		padding: 0 0 0 0.3rem;
+		line-height: 1rem;
+		border-bottom: 0.01rem solid #eee;
+	}
+	.active .activeRight{
+		margin-left: 0.3rem;
+		float: left;
+	}
+	.active .activeLeft{
+		width: 1.80rem;
+		height: 1rem;
+		display: block;
+		float: left;
+	}
+	.agreement{
+		width: 7.5rem;
+		height: 1rem;
+		
+	}
+	.agreement input{
+		display: block;
+		width: 0rem;
+		height: 0rem;
+		float: left;
+	}
+	.agreement p{
+		width:6.2rem;
+		height:0.87rem;
+		font-size:0.26rem;
+		font-family:PingFang-SC-Medium;
+		font-weight:500;
+		float: left;
+		color: #F76262;
+		margin-top: 0.25rem;
+	}
+	.agreement span{
+		font-size:0.26rem;
+		color:rgba(153,153,153,1);
+	}
+	#color-input-red +label{
+		display: block;
+		width: 0.4rem;
+		height: 0.4rem;
+		background: #fff;
+		border-radius: 50%;
+		border: 1px solid #eee;
+		float: left;
+		margin: 0.3rem 0.3rem 0 0.3rem;
+	}
+	#color-input-red:checked +label::before{
+		display: block;
+		content: "\2714";
+		text-align: center;
+		font-size: 0.3rem;
+		color: #fff;
+		border-radius: 50%;
+		width: 0.4rem;
+		height: 0.4rem;
+		background: #00c160;
+	}
+	input[type=checkbox]{
+		visibility: hidden;
+		border-radius: 50%;
+	}
+
+</style>

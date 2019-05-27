@@ -1,0 +1,171 @@
+<template>
+	<div>
+		<div style="width: 7.5rem;height: 50rem;z-index: -999;background: #f5f7f7;position: fixed;top: 0;left: 0;"></div>
+		<div class="information" style="background: #fff;">
+			<span>设置</span>
+		</div>
+		<router-link to="Help">
+			<div class="myWallet">
+				<span>帮助中心</span>
+				<img class="imgRight" src="../images/arrow_right_gray@2x.png" alt="#">
+			</div>
+		</router-link>
+		<router-link to="Feedback">
+			<div class="myWallet">
+				<span>意见反馈</span>
+				<img class="imgRight" src="../images/arrow_right_gray@2x.png" alt="#">
+			</div>
+		</router-link>
+		<router-link to="AboutUs">
+			<div class="myWallet">
+				<span>关于我们</span>
+				<img class="imgRight" src="../images/arrow_right_gray@2x.png" alt="#">
+			</div>
+		</router-link>
+		<router-link to="VersionInformation">
+			<div class="myWallet">
+				<span>版本信息</span>
+				<img class="imgRight" src="../images/arrow_right_gray@2x.png" alt="#">
+			</div>
+		</router-link>
+		<div style="width: 7.5rem;height: 0.05rem;background: #EEEEEE;"></div>
+		<div class="myWallet" @click="withNew()">
+			<span>版本更新</span>
+			<img class="imgRight" src="../images/arrow_right_gray@2x.png" alt="#">
+		</div>
+		<div class="loginBtnBox">
+			<div class="loginButton" @click="closeLogin()">退出登录</div>
+		</div>
+		<div v-show="mask" style="width: 7.5rem;height: 50rem;z-index: 888;background: #000;opacity: 0.5;display: none;position: fixed;top: 0;left: 0;"></div>
+		<div v-show="popup" class="PopupWindow">
+			<p>是否退出登录</p>
+			<ul>
+				<li @click="cancel()">取消</li>
+				<li @click="close()">确定</li>
+			</ul>
+		</div>
+		<div v-show="withNews" class="PopupWindow">
+			<p>已发布最新版本，快去下载吧</p>
+			<ul>
+				<li @click="cancel()">取消</li>
+				<li>确定</li>
+			</ul>
+		</div>
+		
+	</div>
+</template>
+
+<script>
+export default{
+	data(){
+		return{
+			popup:false,
+			mask:false,
+			withNews:false,
+			nuw:0,
+		}
+	},
+	methods:{
+		closeLogin : function(){
+			this.popup = true;
+			this.mask = true;
+		},
+		cancel : function(){
+			this.popup = false;
+			this.mask = false;
+			this.withNews = false;
+		},
+		withNew : function(){
+			this.withNews = true;
+			this.mask = true;
+		},
+		close : function(){
+			localStorage.token = '';
+			this.$router.push({name:"Login"});
+		}
+	}
+}
+</script>
+
+<style scoped>
+	.myWallet {
+		width: 7.5rem;
+		height: 1rem;
+		padding: 0.3rem 0.3rem 0 0.3rem;
+		border-bottom: 1px solid #eee;
+	}
+
+	.myWallet .imgRight {
+		width: 0.26rem;
+		height: 0.26rem;
+		display: block;
+		float: right;
+		margin: 0.1rem 0 0 0;
+	}
+
+	.myWallet span {
+		width: 2rem;
+		height: 0.28rem;
+		font-size: 0.30rem;
+		font-family: PingFang-SC-Medium;
+		font-weight: 500;
+		color: rgba(51, 51, 51, 1);
+		display: block;
+		float: left;
+		margin-left: 0.16rem;
+	}
+
+	.loginBtnBox {
+		width: 7.5rem;
+		height: 1rem;
+	}
+
+	.loginButton {
+		width: 6.2rem;
+		height: 1rem;
+		background: #eee;
+		border-radius: 0.1rem;
+		font-size: 0.32rem;
+		text-align: center;
+		line-height: 1rem;
+		margin: 0 auto;
+		color: #00C160;
+		border: 1px solid rgba(0, 193, 96, 1);
+		margin-top: 5rem;
+	}
+	.PopupWindow{
+		width: 5rem;
+		height: 3.8rem;
+		position: fixed;
+		z-index: 999;
+		top: 50%;
+		left: 50%;
+		margin: -1.9rem 0 0 -2.5rem;
+		background: #fff;
+		border-radius:0.10rem;
+	}
+	.PopupWindow p{
+		width: 5rem;
+		height: 0.3rem;
+		text-align: center;
+		font-size:0.3rem;
+		font-family:PingFang-SC-Medium;
+		font-weight:500;
+		color:rgba(51,51,51,1);
+		line-height:0.48rem;
+		margin-top: 1rem;
+	}
+	.PopupWindow ul{
+		margin-top: 1.4rem;
+	}
+	.PopupWindow ul li{
+		height: 1rem;
+		width: 2.5rem;
+		float: left;
+		text-align: center;
+		line-height: 1rem;
+		color: #333;
+		font-size: 0.3rem;
+		border-top:1px solid #eee;
+	}
+</style>

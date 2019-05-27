@@ -1,0 +1,18 @@
+<template>
+	<div>
+		<div style="width: 7.5rem;height: 50rem;z-index: -999;background: #f5f7f7;position: fixed;top: 0;left: 0;"></div>
+		<div class="information" style="background: #fff;">
+			<span>支付安全</span>
+		</div>
+		<router-link to="/SetPassword"><div class="myWallet" style="background: #fff;">
+			<span>设置支付密码</span>
+			<img class="imgRight" src="../images/arrow_right_gray@2x.png" alt="#">
+		</div></router-link>
+	</div>
+</template>
+
+<script>
+</script>
+
+<style>
+</style>

@@ -1,0 +1,21 @@
+<template>
+	<div>
+		<CertificationRecords />
+		<Xfooter />
+	</div>
+</template>
+
+<script>
+import Xfooter from '../components/InformationAuthenticationFooter.vue'
+import CertificationRecords from '../components/CertificationRecords.vue'
+export default {
+	components: {
+		Xfooter,
+		CertificationRecords
+	}
+}
+</script>
+
+<style scoped>
+	
+</style>

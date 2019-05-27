@@ -1,0 +1,259 @@
+<template>
+	<div>
+		<div style="width: 7.5rem;height: 50rem;z-index: -999;background: #f5f7f7;position: fixed;top: 0;left: 0;"></div>
+		<div class="information" style="background: #fff;">
+			<span>我的收藏</span>
+			<div 
+				v-show="collectionTo"
+				@click="collection()"
+			>编辑</div>
+			<div 
+				v-show="completeTo"
+				@click="complete()"
+			>完成</div>
+		</div>
+		<div class="collevtion">
+			<input 
+				v-model="checkData"
+				value="a" id="color"
+				class="color checkItem"
+				type="checkbox" name="color"
+				style="width: 0;height: 0;display: block;"
+			/>
+			<label 
+				v-show="collevtionTo"
+				for="color"
+				style="line-height: 0.4rem;margin: 0.8rem 0.25rem"
+			></label >
+			<div class="collevtionMain">
+				<div class="collevtionImg"></div>
+				<p v-bind:class="{active}">这是标题内容这是标题内容这是标题内容这是标题最多两行这是标题内容最多两行...</p>
+				<div class="look">
+					<img src="../images/ic_browse@2x.png" alt="">
+					999
+				</div>
+			</div>
+		</div>
+		
+		<div class="collevtion">
+			<input 
+				v-model="checkData"
+				value="b"
+				id="colorT"
+				class="color checkItem"
+				type="checkbox"
+				name="color"
+				style="width: 0;height: 0;display: block;"
+			/>
+			<label
+				v-show="collevtionTo"
+				for="colorT"
+				style="line-height: 0.4rem;margin: 0.8rem 0.25rem"
+			></label >
+			<div class="collevtionMain">
+				<div class="collevtionImg"></div>
+				<p v-bind:class="{active}">这是标题内容这是标题内容这是标题内容这是标题最多两行这是标题内容最多两行...</p>
+				<div class="look">
+					<img src="../images/ic_browse@2x.png" alt="">
+					999
+				</div>
+			</div>
+		</div>
+		<div class="collectionFooter" v-show="display">
+			<div class="collectionFooterLeft">
+				<input
+					@click="checkAll($event)"
+					id="colorTo" class="color"
+					type="checkbox"
+					name="color"
+					style="width: 0;height: 0;"
+				/>
+				<label for="colorTo" style="line-height: 0.4rem;margin: 0.2rem 0.2rem 0 -0.3rem;"></label >
+				全部选中
+			</div>
+			<div class="collectionFooterRight" @click="close()">取消收藏</div>
+		</div>
+	</div>
+</template>
+
+<script>
+
+export default {
+	data(){
+		return{
+			display:false,
+			collectionTo:true,
+			completeTo:false,
+			collevtionTo:false,
+			active:false,
+			checkData: [],
+		}
+	},
+	watch: {
+		checkData: {
+			handler(){
+				if(this.checkData.length == 2){
+					document.querySelector('#colorTo').checked = true;
+				}else {
+					document.querySelector('#colorTo').checked = false;
+				}
+			}
+		}
+	},
+	methods: {
+		collection: function() {
+			this.display = true
+			this.collectionTo = false
+			this.completeTo = true
+			this.collevtionTo = true
+			this.active = true
+			
+		},
+		close: function (){
+			this.display = false
+			this.collectionTo = true
+			this.completeTo= false
+			this.collevtionTo = false
+			this.active = false
+		},
+		complete: function(){
+			this.display = false
+			this.collectionTo = true
+			this.completeTo = false
+			this.collevtionTo = false
+			this.active = false
+		},
+		checkAll(e){
+			var checkObj = document.querySelectorAll('.checkItem');
+			if(e.target.checked){
+				for(var i = 0;i<checkObj.length;i++){
+					if(!checkObj[i].checked){
+						this.checkData.push(checkObj[i].value);
+					}
+				}
+			}else {
+				this.checkData = [];
+			}
+		}
+	}
+}
+</script>
+
+<style scoped>
+	.collevtion{
+		height: 2.1rem;
+		width: 7.5rem;
+		background: #fff;
+	}
+	.collevtion .collevtionMain{
+		width: 6.9rem;
+		height: 1.7rem;
+		margin: 0 auto;
+		margin-bottom: 0;
+		padding-top: 0.3rem;
+	}
+	.collevtion .collevtionMain .collevtionImg{
+		width:1.50rem;
+		height:1.50rem;
+		border-radius:0.1rem;
+		background: #00C160;
+		float: left;
+	}
+	.collevtion .collevtionMain p{
+		width:5.2rem;
+		height:0.71rem;
+		font-size:0.26rem;
+		font-family:PingFang-SC-Medium;
+		font-weight:500;
+		color:rgba(51,51,51,1);
+		line-height:0.38rem;
+		float: right;
+		display: -webkit-box;
+		-webkit-box-orient: vertical;
+		-webkit-line-clamp: 2;
+		overflow: hidden;
+	}
+	.collevtion .collevtionMain .active{
+		width: 4.5rem;
+	}
+	.collevtion .collevtionMain .look{
+		width: 1rem;
+		height: 0.34rem;
+		font-size:0.28rem;
+		font-family:HelveticaExt-Normal;
+		font-weight:400;
+		color:rgba(51,51,51,1);
+		line-height:0.38rem;
+		float: right;
+		margin-top: 0.56rem;
+	}
+	.collevtion .collevtionMain .look img{
+		width: 0.34rem;
+		height: 0.34rem;
+	}
+	.collectionFooter{
+		width: 7.5rem;
+		height: 0.8rem;
+		position: fixed;
+		left: 0;
+		bottom: 0;
+		background: #fff;
+	}
+	.collectionFooter .collectionFooterLeft{
+		width:5.3rem;
+		height:0.88rem;
+		background:rgba(255,255,255,1);
+		box-shadow:0px 2px 0px 0px rgba(238,238,238,0.8);
+		font-size:0.28rem;
+		font-family:PingFang-SC-Medium;
+		font-weight:500;
+		color:rgba(51,51,51,1);
+		line-height:0.88rem;
+		float: left;
+	}
+	.collectionFooter .collectionFooterLeft input{
+		width: 0.3rem;
+		height: 0.3rem;
+		float: left;
+		margin-top: 0.28rem;
+		margin-left: 0.3rem;
+		margin-right: 0.3rem;
+	}
+	.collectionFooter .collectionFooterRight{
+		width: 2.1rem;
+		height: 0.8rem;
+		float: right;
+		font-size:0.28rem;
+		font-family:PingFang-SC-Medium;
+		font-weight:500;
+		color:rgba(255,255,255,1);
+		line-height:0.8rem;
+		text-align: center;
+		background: #00C160;
+	}
+	
+	.color+ label{
+		display: block;
+		width: 0.4rem;
+		height: 0.4rem;
+		background: #fff;
+		border-radius: 50%;
+		border: 1px solid #eee;
+		float: left;
+	}
+	.color:checked +label::before{
+		display: block;
+		content: "\2714";
+		text-align: center;
+		font-size: 0.3rem;
+		color: #fff;
+		border-radius: 50%;
+		width: 0.4rem;
+		height: 0.4rem;
+		background: #00c160;
+	}
+	input[type=checkbox]{
+		visibility: hidden;
+		border-radius: 50%;
+	}
+</style>

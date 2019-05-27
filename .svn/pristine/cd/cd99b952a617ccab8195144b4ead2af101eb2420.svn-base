@@ -1,0 +1,77 @@
+<template>
+	<div>
+		<div class="information">
+			<span>帮助中心</span>
+		</div>
+		<router-link to="HelpArticles">
+			<div class="myWallet">
+				<span>文章标题</span>
+				<img class="imgRight" src="../images/arrow_right_gray@2x.png" alt="#">
+			</div>
+		</router-link>
+		<router-link to="HelpArticles">
+			<div class="myWallet">
+				<span>文章标题</span>
+				<img class="imgRight" src="../images/arrow_right_gray@2x.png" alt="#">
+			</div>
+		</router-link>
+		<router-link to="HelpArticles">
+			<div class="myWallet">
+				<span>文章标题</span>
+				<img class="imgRight" src="../images/arrow_right_gray@2x.png" alt="#">
+			</div>
+		</router-link>
+		<router-link to="HelpArticles">
+			<div class="myWallet">
+				<span>文章标题</span>
+				<img class="imgRight" src="../images/arrow_right_gray@2x.png" alt="#">
+			</div>
+		</router-link>
+		<router-link to="HelpArticles">
+			<div class="myWallet">
+				<span>文章标题</span>
+				<img class="imgRight" src="../images/arrow_right_gray@2x.png" alt="#">
+			</div>
+		</router-link>
+		<router-link to="HelpArticles">
+			<div class="myWallet">
+				<span>文章标题</span>
+				<img class="imgRight" src="../images/arrow_right_gray@2x.png" alt="#">
+			</div>
+		</router-link>
+		
+	</div>
+</template>
+
+<script>
+</script>
+
+<style scoped>
+	.myWallet {
+		width: 7.5rem;
+		height: 1rem;
+		padding: 0.3rem 0.3rem 0 0.3rem;
+		border-bottom: 1px solid #eee;
+	}
+
+	.myWallet .imgRight {
+		width: 0.26rem;
+		height: 0.26rem;
+		display: block;
+		float: right;
+		margin: 0.1rem 0 0 0;
+	}
+
+	.myWallet span {
+		width: 2rem;
+		height: 0.28rem;
+		font-size: 0.30rem;
+		font-family: PingFang-SC-Medium;
+		font-weight: 500;
+		color: rgba(51, 51, 51, 1);
+		display: block;
+		float: left;
+		margin-left: 0.16rem;
+	}
+</style>
+

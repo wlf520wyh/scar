@@ -1,0 +1,55 @@
+<template>
+	<div>
+		<div class="information">
+			<span>我的</span>
+		</div>
+		<div class="mine">
+			<h2>币值</h2>
+			<span class="rmbSymbol">&yen; </span><span class="rmb">520</span>
+			<router-link to="/Transfer"><div>转账</div></router-link>
+		</div>
+		<div class="myWallet">
+			<span>公匙地址</span>
+			<p>sefs8451485215138gsad1563</p>
+		</div>
+		<router-link to="/Subsidiary"><div class="myWallet">
+			<span>币值明细</span>
+			<img class="imgRight" src="../images/arrow_right_gray@2x.png" alt="#">
+		</div></router-link>
+		<router-link to="/PaymentSecurity"><div class="myWallet">
+			<span>支付安全</span>
+			<img class="imgRight" src="../images/arrow_right_gray@2x.png" alt="#">
+		</div></router-link>
+	</div>
+</template>
+
+<script>
+</script>
+
+<style scoped>
+	.mine div{
+		width:1.10rem;
+		height:0.60rem;
+		background:rgba(255,255,255,1);
+		border:1px solid rgba(0,193,96,1);
+		border-radius:0.10rem;
+		float: right;
+		font-size:0.30rem;
+		font-family:PingFang-SC-Bold;
+		font-weight:bold;
+		color:rgba(0,193,96,1);
+		text-align: center;
+		line-height: 0.6rem;
+		margin: -0.3rem 0.3rem 0 0;
+	}
+	.myWallet span{
+		margin-left: 0rem;
+	}
+	.myWallet p{
+		font-size:0.3rem;
+		font-family:PingFang-SC-Medium;
+		font-weight:500;
+		color:rgba(51,51,51,1);
+		float: right;
+	}
+</style>

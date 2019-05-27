@@ -1,0 +1,471 @@
+import axios from 'axios'
+axios.defaults.baseURL = 'http://47.107.251.14/identity'
+axios.defaults.headers.post['Content-Type'] = 'application/x-www-form-urlencoded'
+
+export default {
+//   mounted() {
+// 		console.log('mounted');
+//     axios.defaults.baseURL = 'http://47.107.251.14/identity'
+//     axios.defaults.headers.post['Content-Type'] = 'application/x-www-form-urlencoded'
+    // if (localStorage.loginUser) {
+    //   const loginUser = JSON.parse(localStorage.loginUser);
+    //   axios.defaults.headers.common['sessionId'] = loginUser.sessionId
+    // }
+    // axios.defaults.headers.common['sessionId'] = 'd7ef668454cb4dbe921fe62a828576b4'
+  // },
+
+  /**
+   * 创建formdata请求数据并返回
+   * @param {*} data
+   */
+  createNewFormData (data) {
+    const newFormData = new FormData()
+    Object.keys(data).forEach((key) => {
+      newFormData.append(key, data[key])
+    })
+    return newFormData
+  },
+
+  /**
+   * 调用接口发送请求
+   * @param {*} apiUrl
+   * @param {*} data
+   * @param {*} successCallback
+   * @param {*} failCallback
+   */
+  createRequest (apiUrl, data, successCallback, failCallback) {
+    const apiData = this.createNewFormData(data)
+    axios.post(apiUrl, apiData).then(successCallback, failCallback)
+    return null
+  },
+
+  /**
+   * 发送邮箱验证码
+   * @param {object} data
+   * @param {*} successCallback
+   * @param {*} failCallback
+   */
+  getEmailCode (data, successCallback, failCallback) {
+    const apiUrl = `/api/app/common/getEmailCode.json`
+    this.createRequest(apiUrl, data, successCallback, failCallback)
+  },
+
+  /**
+   * 邮箱注册
+   * @param {object} data
+   * @param {*} successCallback
+   * @param {*} failCallback
+   */
+  registerByEmail (data, successCallback, failCallback) {
+    const apiUrl = `/api/app/common/registerByEmail.json`
+    this.createRequest(apiUrl, data, successCallback, failCallback)
+  },
+
+  /**
+   * 邮箱登录
+   * @param {*} data
+   * @param {*} successCallback
+   * @param {*} failCallback
+   */
+  login (data, successCallback, failCallback) {
+    const apiUrl = `/user/login`
+    this.createRequest(apiUrl, data, successCallback, failCallback)
+  },
+
+  /**
+   * 登出
+   * @param {*} data
+   * @param {*} successCallback
+   * @param {*} failCallback
+   */
+  logout (data, successCallback, failCallback) {
+    const apiUrl = `/api/app/account/loginOut.json`
+    this.createRequest(apiUrl, data, successCallback, failCallback)
+  },
+
+  /**
+   * 忘记密码
+   * @param {*} data
+   * @param {*} successCallback
+   * @param {*} failCallback
+   */
+  resetPwdByEmail (data, successCallback, failCallback) {
+    const apiUrl = `/api/app/common/resetPwdByEmail.json`
+    this.createRequest(apiUrl, data, successCallback, failCallback)
+  },
+
+  /**
+   * 获取首页Banner图
+   * @param {*} data
+   * @param {*} successCallback
+   * @param {*} failCallback
+   */
+  getHomeBanner (data, successCallback, failCallback) {
+    const apiUrl = `/api/app/banner/getHomeBanner.json`
+    this.createRequest(apiUrl, data, successCallback, failCallback)
+  },
+
+  /**
+   * 获取项目
+   * @param {*} data
+   * @param {*} successCallback
+   * @param {*} failCallback
+   */
+  getProjectList (data, successCallback, failCallback) {
+    const apiUrl = `/api/app/project/getProjectList.json`
+    this.createRequest(apiUrl, data, successCallback, failCallback)
+  },
+
+  /**
+   * 获取首页Partners/Media
+   * @param {*} data
+   * @param {*} successCallback
+   * @param {*} failCallback
+   */
+  getHomeMeida (data, successCallback, failCallback) {
+    const apiUrl = `/api/app/parterMeida/getHomeMeida.json`
+    this.createRequest(apiUrl, data, successCallback, failCallback)
+  },
+
+  /**
+   * 获取首页PressRelease
+   * @param {*} data
+   * @param {*} successCallback
+   * @param {*} failCallback
+   */
+  getPressRelease (data, successCallback, failCallback) {
+    const apiUrl = `/api/app/pressRelease/getHomeMeida.json`
+    this.createRequest(apiUrl, data, successCallback, failCallback)
+  },
+
+  /**
+   * 获取社交链接
+   * @param {*} data
+   * @param {*} successCallback
+   * @param {*} failCallback
+   */
+  getSocialContact (data, successCallback, failCallback) {
+    const apiUrl = `/api/app/contact/getSocialContact.json`
+    this.createRequest(apiUrl, data, successCallback, failCallback)
+  },
+
+  /**
+   * offerings广告列表
+   * @param {*} data
+   * @param {*} successCallback
+   * @param {*} failCallback
+   */
+  getOfferingsBanner (data, successCallback, failCallback) {
+    const apiUrl = `/api/app/banner/getOfferingsBanner.json`
+    this.createRequest(apiUrl, data, successCallback, failCallback)
+  },
+
+  /**
+   * banner跳转图文详情
+   * @param {*} data
+   * @param {*} successCallback
+   * @param {*} failCallback
+   */
+  getBannerContent (data, successCallback, failCallback) {
+    const apiUrl = `/api/app/banner/getBannerContent.json`
+    this.createRequest(apiUrl, data, successCallback, failCallback)
+  },
+
+  /**
+   * 根据id获取项目基本信息
+   * @param {*} data
+   * @param {*} successCallback
+   * @param {*} failCallback
+   */
+  getProjectMsg (data, successCallback, failCallback) {
+    const apiUrl = `/api/app/project/getProjectMsg.json`
+    this.createRequest(apiUrl, data, successCallback, failCallback)
+  },
+
+  /**
+   * 根据id获取项目Testimonials
+   * @param {*} data
+   * @param {*} successCallback
+   * @param {*} failCallback
+   */
+  getTestimonialsList (data, successCallback, failCallback) {
+    const apiUrl = `/api/app/project/getTestimonialsList.json`
+    this.createRequest(apiUrl, data, successCallback, failCallback)
+  },
+
+  /**
+   * 根据id获取项目ComparableList
+   * @param {*} data
+   * @param {*} successCallback
+   * @param {*} failCallback
+   */
+  getComparableList (data, successCallback, failCallback) {
+    const apiUrl = `/api/app/project/getComparableList.json`
+    this.createRequest(apiUrl, data, successCallback, failCallback)
+  },
+
+  /**
+   * 根据id获取项目EquityList
+   * @param {*} data
+   * @param {*} successCallback
+   * @param {*} failCallback
+   */
+  getEquityList (data, successCallback, failCallback) {
+    const apiUrl = `/api/app/project/getEquityList.json`
+    this.createRequest(apiUrl, data, successCallback, failCallback)
+  },
+
+  /**
+   * 根据id获取项目TokenSale
+   * @param {*} data
+   * @param {*} successCallback
+   * @param {*} failCallback
+   */
+  getTokenSaleList (data, successCallback, failCallback) {
+    const apiUrl = `/api/app/project/getTokenSaleList.json`
+    this.createRequest(apiUrl, data, successCallback, failCallback)
+  },
+
+  /**
+   * 根据id获取项目TeamList
+   * @param {*} data
+   * @param {*} successCallback
+   * @param {*} failCallback
+   */
+  getTeamList (data, successCallback, failCallback) {
+    const apiUrl = `/api/app/project/getTeamList.json`
+    this.createRequest(apiUrl, data, successCallback, failCallback)
+  },
+
+  /**
+   * 根据id获取项目AdvisorList
+   * @param {*} data
+   * @param {*} successCallback
+   * @param {*} failCallback
+   */
+  getAdvisorList (data, successCallback, failCallback) {
+    const apiUrl = `/api/app/project/getAdvisorList.json`
+    this.createRequest(apiUrl, data, successCallback, failCallback)
+  },
+
+  /**
+   * 根据id获取项目LatestRatingList
+   * @param {*} data
+   * @param {*} successCallback
+   * @param {*} failCallback
+   */
+  getLatestRatingList (data, successCallback, failCallback) {
+    const apiUrl = `/api/app/project/getLatestRatingList.json`
+    this.createRequest(apiUrl, data, successCallback, failCallback)
+  },
+
+  /**
+   * 根据id获取项目LatestNewsList
+   * @param {*} data
+   * @param {*} successCallback
+   * @param {*} failCallback
+   */
+  getLatestNewsList (data, successCallback, failCallback) {
+    const apiUrl = `/api/app/project/getLatestNewsList.json`
+    this.createRequest(apiUrl, data, successCallback, failCallback)
+  },
+
+  /**
+   * 根据id获取项目QuestionAnswerList
+   * @param {*} data
+   * @param {*} successCallback
+   * @param {*} failCallback
+   */
+  getQuestionAnswerList (data, successCallback, failCallback) {
+    const apiUrl = `/api/app/project/getQuestionAnswerList.json`
+    this.createRequest(apiUrl, data, successCallback, failCallback)
+  },
+
+  /**
+   * 根据id获取项目DocumentsList
+   * @param {*} data
+   * @param {*} successCallback
+   * @param {*} failCallback
+   */
+  getDocumentsList (data, successCallback, failCallback) {
+    const apiUrl = `/api/app/project/getDocumentsList.json`
+    this.createRequest(apiUrl, data, successCallback, failCallback)
+  },
+
+  /**
+   * 根据id获取项目downloadFileQiuniu
+   * @param {*} data
+   * @param {*} successCallback
+   * @param {*} failCallback
+   */
+  downloadFileQiuniu (data, successCallback, failCallback) {
+    const apiUrl = `/api/app/common/downloadFileQiuniu`
+    this.createRequest(apiUrl, data, successCallback, failCallback)
+  },
+
+  /**
+   * invest info页面项目基本信息
+   * @param {*} data
+   * @param {*} successCallback
+   * @param {*} failCallback
+   */
+  toInvest (data, successCallback, failCallback) {
+    const apiUrl = `/api/app/order/toInvest.json`
+    this.createRequest(apiUrl, data, successCallback, failCallback)
+  },
+
+  /**
+   * invest info页面计算赠送数量和总价
+   * @param {*} data
+   * @param {*} successCallback
+   * @param {*} failCallback
+   */
+  count (data, successCallback, failCallback) {
+    const apiUrl = `/api/app/order/count.json`
+    this.createRequest(apiUrl, data, successCallback, failCallback)
+  },
+
+  /**
+   * 点击提交下单按钮
+   * @param {*} data
+   * @param {*} successCallback
+   * @param {*} failCallback
+   */
+  addOrder (data, successCallback, failCallback) {
+    const apiUrl = `/api/app/order/addOrder.json`
+    this.createRequest(apiUrl, data, successCallback, failCallback)
+  },
+
+  /**
+   * 付款后修改订单状态
+   * @param {*} data
+   * @param {*} successCallback
+   * @param {*} failCallback
+   */
+  pay (data, successCallback, failCallback) {
+    const apiUrl = `/api/app/order/pay.json`
+    this.createRequest(apiUrl, data, successCallback, failCallback)
+  },
+
+  /**
+   * 个人投资信息列表
+   * @param {*} data
+   * @param {*} successCallback
+   * @param {*} failCallback
+   */
+  getOrder (data, successCallback, failCallback) {
+    const apiUrl = `/api/app/order/getOrder.json`
+    this.createRequest(apiUrl, data, successCallback, failCallback)
+  },
+
+  /**
+   * 获取Portfolio页面3个图表数据
+   * @param {*} data
+   * @param {*} successCallback
+   * @param {*} failCallback
+   */
+  getAppOrderList (data, successCallback, failCallback) {
+    const apiUrl = `/api/app/order/getAppOrderList.json`
+    this.createRequest(apiUrl, data, successCallback, failCallback)
+  },
+
+  /**
+   * Portfolio子页面获取updates列表数据
+   * @param {*} data
+   * @param {*} successCallback
+   * @param {*} failCallback
+   */
+  getUpdatesList (data, successCallback, failCallback) {
+    const apiUrl = `/api/app/project/getUpdatesList.json`
+    this.createRequest(apiUrl, data, successCallback, failCallback)
+  },
+
+  /**
+   * Portfolio子页面获取Dividends列表数据
+   * @param {*} data
+   * @param {*} successCallback
+   * @param {*} failCallback
+   */
+  getDividendsList (data, successCallback, failCallback) {
+    const apiUrl = `/api/app/project/getDividendsList.json`
+    this.createRequest(apiUrl, data, successCallback, failCallback)
+  },
+
+  /**
+   * 获取手机验证码
+   * @param {*} data
+   * @param {*} successCallback
+   * @param {*} failCallback
+   */
+  genCode (data, successCallback, failCallback) {
+    const apiUrl = `/api/app/auth/genCode.json`
+    this.createRequest(apiUrl, data, successCallback, failCallback)
+  },
+
+  /**
+   * 邮箱认证
+   * @param {*} data
+   * @param {*} successCallback
+   * @param {*} failCallback
+   */
+  emailAuth (data, successCallback, failCallback) {
+    const apiUrl = `/api/app/account/emailAuth.json`
+    this.createRequest(apiUrl, data, successCallback, failCallback)
+  },
+
+  /**
+   * 手机认证
+   * @param {*} data
+   * @param {*} successCallback
+   * @param {*} failCallback
+   */
+  phoneAuth (data, successCallback, failCallback) {
+    const apiUrl = `/api/app/account/phoneAuth.json`
+    this.createRequest(apiUrl, data, successCallback, failCallback)
+  },
+
+  /**
+   * 提交认证信息
+   * @param {*} data
+   * @param {*} successCallback
+   * @param {*} failCallback
+   */
+  auth (data, successCallback, failCallback) {
+    const apiUrl = `/api/app/account/auth.json`
+    this.createRequest(apiUrl, data, successCallback, failCallback)
+  },
+
+  /**
+   * 修改密码
+   * @param {*} data
+   * @param {*} successCallback
+   * @param {*} failCallback
+   */
+  changePassword (data, successCallback, failCallback) {
+    const apiUrl = `/api/app/account/changePassword.json`
+    this.createRequest(apiUrl, data, successCallback, failCallback)
+  },
+
+  /**
+   * 通用文件上传
+   * @param {*} data
+   * @param {*} successCallback
+   * @param {*} failCallback
+   */
+  uploadByQiuniu (data, successCallback, failCallback) {
+    const apiUrl = `/api/app/common/uploadByQiuniu`
+    this.createRequest(apiUrl, data, successCallback, failCallback)
+  },
+
+  /**
+   * 个人信息
+   * @param {*} data
+   * @param {*} successCallback
+   * @param {*} failCallback
+   */
+  getProfileMsg (data, successCallback, failCallback) {
+    const apiUrl = `/api/app/account/getProfileMsg.json`
+    this.createRequest(apiUrl, data, successCallback, failCallback)
+  }
+
+}
